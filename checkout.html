@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Heel &amp; Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body class="co-page-body">
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">H&amp;S.</a>
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#occasions">Occasions</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="co-main">
+        <div class="co-card" id="emptyBox" hidden>
+            <h1 class="co-title">Your bag is empty</h1>
+            <p class="co-note"><a href="shop.html" class="co-link">Browse the collection</a></p>
+        </div>
+
+        <div class="co-card" id="checkoutBox" hidden>
+            <h1 class="co-title">Checkout</h1>
+            <h2 class="co-sub">Your Order</h2>
+            <div id="orderSummary"></div>
+
+            <h2 class="co-sub">Customer Details</h2>
+            <form id="customerForm" class="co-form">
+                <div class="co-grid">
+                    <label>Full Name <input type="text" name="name" required autocomplete="name"></label>
+                    <label>Email <input type="email" name="email" required autocomplete="email"></label>
+                    <label>Phone <input type="tel" name="phone" required pattern="[0-9+ ]{10,15}" autocomplete="tel"></label>
+                    <label>Pincode <input type="text" name="pincode" required pattern="[0-9]{6}" inputmode="numeric"></label>
+                    <label class="full">Address <input type="text" name="address" required autocomplete="street-address"></label>
+                    <label>City <input type="text" name="city" required></label>
+                    <label>State <input type="text" name="state" required></label>
+                </div>
+                <button class="co-btn" type="submit">Place Order</button>
+            </form>
+        </div>
+
+        <div class="co-card" id="doneBox" hidden>
+            <h1 class="co-title">Thank you!</h1>
+            <p class="co-note" id="doneText"></p>
+            <p class="co-note" style="margin-top: 1.4rem;"><a href="shop.html" class="co-link">Continue shopping</a></p>
+        </div>
+    </main>
+
+    <script>
+        const CART_KEY = 'heelStoryCart_v3';
+        const CUSTOMER_KEY = 'heelStoryCustomer';
+        const ORDERS_KEY = 'heelStoryOrders';
+
+        const read = (key, fallback) => {
+            try { const v = JSON.parse(localStorage.getItem(key)); return v === null ? fallback : v; }
+            catch { return fallback; }
+        };
+        const money = n => `₹${n.toLocaleString('en-IN')}`;
+        const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+        const cart = read(CART_KEY, []);
+        const total = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
+
+        if (cart.length === 0) {
+            document.getElementById('emptyBox').hidden = false;
+        } else {
+            document.getElementById('checkoutBox').hidden = false;
+
+            document.getElementById('orderSummary').innerHTML = cart.map(i => `
+                <div class="co-row"><span>${esc(i.name)} (Size ${esc(i.size)}) × ${i.quantity}</span><span>${money(i.price * i.quantity)}</span></div>
+            `).join('') + `<div class="co-row co-total"><span>Total</span><span>${money(total)}</span></div>`;
+
+            // Pre-fill if this customer ordered before on this browser
+            const form = document.getElementById('customerForm');
+            const saved = read(CUSTOMER_KEY, {});
+            Object.keys(saved).forEach(k => { if (form.elements[k]) form.elements[k].value = saved[k]; });
+
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                const customer = {};
+                new FormData(form).forEach((v, k) => { customer[k] = String(v).trim(); });
+                localStorage.setItem(CUSTOMER_KEY, JSON.stringify(customer));
+
+                const order = {
+                    id: 'HS' + Date.now().toString().slice(-8),
+                    date: new Date().toISOString(),
+                    customer,
+                    items: cart.map(i => ({ name: i.name, size: i.size, quantity: i.quantity, price: i.price })),
+                    total
+                };
+                const orders = read(ORDERS_KEY, []);
+                orders.unshift(order);
+                localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+                localStorage.setItem(CART_KEY, '[]');
+
+                document.getElementById('checkoutBox').hidden = true;
+                document.getElementById('doneBox').hidden = false;
+                document.getElementById('doneText').innerHTML =
+                    `Order <strong>#${order.id}</strong> placed, ${esc(customer.name)}.<br>` +
+                    `We'll deliver to ${esc(customer.address)}, ${esc(customer.city)}, ${esc(customer.state)} - ${esc(customer.pincode)}.<br>` +
+                    `Total: ${money(total)}`;
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
+
+</html>

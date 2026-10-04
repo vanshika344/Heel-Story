@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heel & story | Luxury Footwear</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Ballet&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400;500;600;700&family=Imbue:opsz,wght@10..100,100..900&family=Jost:wght@300;400;500;600;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">H&S.</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#philosophy">Philosophy</a>
+                <a href="#collection">Collection</a>
+                <a href="#occasions">Occasions</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="#contact">Contact</a>
+                <a href="login.html">Login</a>
+
+            </div>
+            <div class="nav-actions">
+                <button class="nav-cart" id="cartToggle" aria-label="Open Shopping Bag">
+                    <span class="cart-label">Bag</span>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section" id="home">
+        <div class="video-container">
+            <video class="bg-video" autoplay muted loop playsinline preload="auto">
+                <source src="assets/video/hero-section-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-vignette"></div>
+        </div>
+        <div class="hero-center-content reveal">
+            <div class="brand-monogram-title">
+                <div class="script-heal">Heel &</div>
+                <div class="serif-story">STORY</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy-section" id="philosophy">
+        <div class="video-container">
+            <video class="bg-video" autoplay muted loop playsinline preload="auto">
+                <source src="assets/video/philosophy-section-video.mp4" type="video/mp4">
+            </video>
+            <div class="philosophy-vignette"></div>
+        </div>
+        <div class="philosophy-content reveal">
+            <h2 class="more-than-title">
+                <span>More Than</span>
+                <span>Fashion</span>
+            </h2>
+            <p class="philosophy-text">
+                Story is where every step begins. From soles to stitching, each pair is crafted to feel considered and
+                unforgettable.
+            </p>
+        </div>
+    </section>
+
+    <section class="featured-collection-section" id="collection">
+        <div class="section-container">
+            <div class="trio-grid">
+                <!-- Card 1 -->
+                <div class="trio-card reveal">
+                    <div class="card-media">
+                        <img src="assets/images/collection-1.jpg" alt="Luxury Block Heel Boots" loading="lazy">
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="trio-card reveal">
+                    <div class="card-media">
+                        <video autoplay muted loop playsinline preload="auto">
+                            <source src="assets/video/collection-3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="trio-card reveal">
+                    <div class="card-media">
+                        <video autoplay muted loop playsinline preload="auto">
+                            <source src="assets/video/collection-2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="collection-cta reveal">
+                <a href="shop.html" class="btn-shop-collection" id="exploreCollectionBtn">Shop the Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 4. SHOP BY OCCASION ===== -->
+    <section class="occasions-section" id="occasions">
+        <div class="section-container">
+            <div class="occasions-header reveal">
+                <span class="occasion-tag">+ SHOP BY OCCASION</span>
+            </div>
+
+            <div class="occasions-grid">
+                <!-- Occasion 1: Everyday -->
+                <div class="occasion-card reveal" data-filter="everyday">
+                    <div class="occasion-title-top">everyday</div>
+                    <div class="occasion-arch-image">
+                        <img src="assets/images/occasion-everyday.jpg" alt="Everyday Comfort Shoes" loading="lazy">
+                    </div>
+                    <div class="occasion-title-bottom">everyday</div>
+                    <div class="occasion-tagline">COMFORT, EVERY STEP</div>
+                </div>
+
+                <!-- Occasion 2: Statement -->
+                <div class="occasion-card reveal" data-filter="statement">
+                    <div class="occasion-title-top">Statement</div>
+                    <div class="occasion-arch-image">
+                        <img src="assets/images/occasion-statement.png" alt="Statement Luxury Heels" loading="lazy">
+                    </div>
+                    <div class="occasion-title-bottom">Statement</div>
+                    <div class="occasion-tagline">BOLD, UNMISTAKABLE</div>
+                </div>
+
+                <!-- Occasion 3: Formal -->
+                <div class="occasion-card reveal" data-filter="formal">
+                    <div class="occasion-title-top">Formal</div>
+                    <div class="occasion-arch-image">
+                        <img src="assets/images/occasion-formal.png" alt="Formal Occasion Footwear" loading="lazy">
+                    </div>
+                    <div class="occasion-title-bottom">Formal</div>
+                    <div class="occasion-tagline">FOR EVERY OCCASION</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== 6. CONTACT US & BRAND FOOTER ===== -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <div class="contact-main-grid">
+                <!-- Left: Contact Title & Monogram -->
+                <div class="contact-branding reveal">
+                    <h2 class="contact-title">contact us</h2>
+                    <div class="monogram-v-wrapper">
+                        <div class="monogram-v">
+                            <span>V.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Say Hello & Follow Us Columns -->
+                <div class="contact-info-grid reveal">
+                    <div class="contact-col">
+                        <h3 class="contact-col-title">SAY HELLO</h3>
+                        <p><a href="mailto:heelNstory@gmail.com" class="contact-link">heelNstory@gmail.com</a></p>
+                        <p><a href="tel:+918955505481" class="contact-link">+91 8955505481</a></p>
+                        <p class="contact-address">123 Craft Lane, Jaipur,<br>Rajasthan</p>
+                    </div>
+                    <div class="contact-col">
+                        <h3 class="contact-col-title">FOLLOW US</h3>
+                        <p><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                                class="contact-link">Facebook</a></p>
+                        <p><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                                class="contact-link">Instagram</a></p>
+                        <p><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
+                                class="contact-link">TikTok</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 7. BOTTOM BAR ===== -->
+    <footer class="bottom-bar">
+        <div class="bottom-bar-inner">
+            <div class="bottom-links">
+                <a href="#terms" id="termsLink">Terms &amp; Support</a>
+                <a href="#privacy" id="privacyLink">Privacy Policy</a>
+            </div>
+            <div class="bottom-badge">
+                <span>Designed with passion for <strong>Heel &amp; story</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== CART DRAWER ===== -->
+    <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+        <div class="cart-drawer-header">
+            <h3>Your Shopping Bag</h3>
+            <button class="cart-close-btn" id="closeCart" aria-label="Close Bag">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items injected by script.js -->
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+
+    <!-- ===== TOAST NOTIFICATION ===== -->
+    <div class="toast-notification" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

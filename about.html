@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Heel &amp; Story</title>
+    <!-- Modern Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body class="about-page-body">
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">H&amp;S.</a>
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#philosophy">Philosophy</a>
+                <a href="index.html#collection">Collection</a>
+                <a href="index.html#occasions">Occasions</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html" class="active-nav">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-cart" id="cartToggle" aria-label="Open Shopping Bag">
+                    <span class="cart-label">Bag</span>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN ABOUT US CONTENT ===== -->
+    <main class="about-main-wrapper">
+        <div class="section-container">
+            <!-- About Us Header -->
+            <div class="about-header-block reveal">
+                <h1 class="about-main-title">ABOUT US</h1>
+                <p class="about-story-italic">
+                    Heel &amp; Story began with a simple belief: that every pair of shoes carries a story of the hands
+                    that made it, the places it will walk, and the moments it will witness. We craft footwear that
+                    doesn't just complete an outfit, but completes a memory
+                </p>
+            </div>
+
+            <!-- Behind The Scenes -->
+            <div class="behind-scenes-block reveal">
+                <h2 class="behind-scenes-title">BEHIND THE SCENES</h2>
+                <div class="behind-circles-grid">
+                    <div class="behind-circle-card">
+                        <div class="circle-image-wrapper">
+                            <img src="assets/images/about-1.jpg" alt="Shoemaking Materials & Craft" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="behind-circle-card">
+                        <div class="circle-image-wrapper">
+                            <img src="assets/images/about-2.jpg" alt="Artisan Shoe Sketches" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="behind-circle-card">
+                        <div class="circle-image-wrapper">
+                            <img src="assets/images/about-3.jpg" alt="Designers Collaborating in Atelier"
+                                loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== CONTACT US & FOOTER SECTION ===== -->
+    <section class="contact-section about-contact-section" id="contact">
+        <div class="section-container">
+            <div class="contact-main-grid">
+                <!-- Left: Contact Title & Monogram -->
+                <div class="contact-branding reveal">
+                    <h2 class="contact-title">contact us</h2>
+                    <div class="monogram-v-wrapper">
+                        <div class="monogram-v">
+                            <span>V.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Say Hello & Follow Us Columns -->
+                <div class="contact-info-grid reveal">
+                    <div class="contact-col">
+                        <h3 class="contact-col-title">SAY HELLO</h3>
+                        <p><a href="mailto:heelNstory@gmail.com" class="contact-link">heelNstory@gmail.com</a></p>
+                        <p><a href="tel:+918955505481" class="contact-link">+91 8955505481</a></p>
+                        <p class="contact-address">123 Craft Lane, Jaipur,<br>Rajasthan</p>
+                    </div>
+                    <div class="contact-col">
+                        <h3 class="contact-col-title">FOLLOW US</h3>
+                        <p><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                                class="contact-link">Facebook</a></p>
+                        <p><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                                class="contact-link">Instagram</a></p>
+                        <p><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
+                                class="contact-link">TikTok</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOTTOM BAR ===== -->
+    <footer class="bottom-bar">
+        <div class="bottom-bar-inner">
+            <div class="bottom-links">
+                <a href="#terms">Terms &amp; Support</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+            <div class="bottom-badge">
+                <span>Designed with passion for <strong>Heel & story</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== CART DRAWER ===== -->
+    <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+        <div class="cart-drawer-header">
+            <h3>Your Shopping Bag</h3>
+            <button class="cart-close-btn" id="closeCart" aria-label="Close Bag">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items injected by script.js -->
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+
+    <!-- ===== TOAST NOTIFICATION ===== -->
+    <div class="toast-notification" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

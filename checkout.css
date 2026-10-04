@@ -1,0 +1,19 @@
+/* HEEL & STORY - CHECKOUT / CUSTOMER DETAILS PAG */
+[hidden] { display: none !important; }
+.co-page-body { background: var(--bg-dark-wine); color: var(--color-cream); }
+.co-main { min-height: 100vh; padding: 8rem 1.5rem 5rem; display: flex; justify-content: center; }
+.co-card { width: 100%; max-width: 720px; height: fit-content; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 28px; padding: 2.4rem; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); }
+.co-title { font-family: var(--font-display-serif); font-size: clamp(1.8rem, 4vw, 2.6rem); text-align: center; margin-bottom: 1.6rem; }
+.co-sub { font-family: var(--font-display-serif); font-size: 1.4rem; margin: 1.6rem 0 1rem; }
+.co-note { text-align: center; opacity: 0.8; line-height: 1.7; }
+.co-link { color: var(--color-gold); text-decoration: underline; }
+.co-row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.95rem; }
+.co-total { font-weight: 700; font-size: 1.1rem; border-bottom: none; }
+.co-form { display: flex; flex-direction: column; gap: 1.2rem; }
+.co-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.co-grid .full { grid-column: 1 / -1; }
+.co-form label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.co-form input { padding: 0.8rem 1rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.25); background: rgba(0, 0, 0, 0.25); color: var(--color-cream); font: inherit; letter-spacing: 0; text-transform: none; }
+.co-form input:focus { outline: none; border-color: var(--color-cream); }
+.co-btn { padding: 0.95rem; border-radius: 999px; border: none; background: var(--color-cream); color: #4a0e13; font-weight: 700; letter-spacing: 0.04em; cursor: pointer; }
+@media (max-width: 540px) { .co-grid { grid-template-columns: 1fr; } .co-card { padding: 1.6rem; } }

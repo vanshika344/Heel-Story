@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop the Collection | Heel &amp; story</title>
+    <!-- Modern Luxury Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cinzel:wght@400;500;600;700&family=Jost:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rye&family=Sancreek&family=Smokum&family=Spicy+Rice&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shop.css">
+</head>
+
+<body class="shop-page-body">
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar shop-navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">H&amp;S.</a>
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#philosophy">Philosophy</a>
+                <a href="index.html#collection">Collection</a>
+                <a href="index.html#occasions">Occasions</a>
+                <a href="shop.html" class="active-nav">Shop</a>
+                <a href="about.html">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="nav-cart" id="cartToggle" aria-label="Open Shopping Bag">
+                    <span class="cart-label">Bag</span>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN SHOP CONTAINER ===== -->
+    <main class="shop-page-main">
+        <div class="shop-page-container">
+            <!-- Ornate Title Header -->
+            <div class="shop-page-title-box">
+                <h1 class="shop-page-title">Shop the Collection</h1>
+            </div>
+
+            <!-- 12 Products Grid (3 Columns x 4 Rows) -->
+            <div class="shop-catalog-grid" id="shopCatalogGrid">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== CREAM THEMED CONTACT SECTION ===== -->
+    <section class="contact-section cream-contact-section" id="contact">
+        <div class="section-container">
+            <div class="contact-main-grid">
+                <!-- Left: Contact Title & Monogram -->
+                <div class="contact-branding">
+                    <h2 class="contact-title cream-theme-title">contact us</h2>
+                    <div class="monogram-v-wrapper">
+                        <div class="monogram-v cream-theme-v">
+                            <span>V.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Say Hello & Follow Us Columns -->
+                <div class="contact-info-grid">
+                    <div class="contact-col">
+                        <h3 class="contact-col-title cream-theme-col-title">SAY HELLO</h3>
+                        <p><a href="mailto:heelNstory@gmail.com"
+                                class="contact-link cream-theme-link">heelNstory@gmail.com</a></p>
+                        <p><a href="tel:+918955505481" class="contact-link cream-theme-link">+91 8955505481</a></p>
+                        <p class="contact-address cream-theme-text">123 Craft Lane, Jaipur,<br>Rajasthan</p>
+                    </div>
+                    <div class="contact-col">
+                        <h3 class="contact-col-title cream-theme-col-title">FOLLOW US</h3>
+                        <p><a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                                class="contact-link cream-theme-link">Facebook</a></p>
+                        <p><a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                                class="contact-link cream-theme-link">Instagram</a></p>
+                        <p><a href="https://tiktok.com" target="_blank" rel="noopener noreferrer"
+                                class="contact-link cream-theme-link">TikTok</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOTTOM BAR ===== -->
+    <footer class="bottom-bar">
+        <div class="bottom-bar-inner">
+            <div class="bottom-links">
+                <a href="#terms">Terms &amp; Support</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+            <div class="bottom-badge">
+                <span>Designed with passion for <strong>Heel &amp; story</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== CART DRAWER ===== -->
+    <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+        <div class="cart-drawer-header">
+            <h3>Your Shopping Bag</h3>
+            <button class="cart-close-btn" id="closeCart" aria-label="Close Bag">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items injected by script.js -->
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-backdrop" id="cartBackdrop"></div>
+
+    <div class="toast-notification" id="toast"></div>
+
+    <div class="size-modal-backdrop" id="sizeModalBackdrop">
+        <div class="size-modal" id="sizeModal">
+            <button class="size-modal-close" id="closeSizeModal">&times;</button>
+            <div class="size-modal-product-info">
+                <div class="size-modal-img"><img id="modalImg" src="" alt="Product"></div>
+                <div class="size-modal-details">
+                    <h3 id="modalTitle">Product Name</h3>
+                    <div class="size-modal-price" id="modalPrice">₹0</div>
+                </div>
+            </div>
+            <div class="size-modal-body">
+                <label>Select Size (EU):</label>
+                <div class="size-modal-options">
+                    <button class="modal-size-btn" data-size="36">36</button>
+                    <button class="modal-size-btn" data-size="37">37</button>
+                    <button class="modal-size-btn selected" data-size="38">38</button>
+                    <button class="modal-size-btn" data-size="39">39</button>
+                    <button class="modal-size-btn" data-size="40">40</button>
+                    <button class="modal-size-btn" data-size="41">41</button>
+                </div>
+            </div>
+            <button class="btn-modal-confirm-add" id="modalConfirmAdd">Add to Bag →</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="shop.js"></script>
+</body>
+
+</html>
