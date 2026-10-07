@@ -50,25 +50,25 @@
 }
 
 /* =========================================================
-   FASHION BACKGROUND GRAPHICS & DOODLES
+   FASHION BACKGROUND GRAPHICS & DOODLES (FULLSCREEN VIVID)
    ========================================================= */
 
 .fashion-bg-decorations {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     pointer-events: none;
     user-select: none;
-    z-index: 1;
+    z-index: 0;
     overflow: hidden;
 }
 
 .fashion-graphic-item {
     position: absolute;
-    color: #4a0e13;
-    opacity: 0.15;
+    color: #4e0b11;
+    opacity: 0.55;
     transition: opacity 0.4s ease, transform 0.4s ease;
     will-change: transform;
 }
@@ -77,6 +77,45 @@
     display: block;
     width: 100%;
     height: 100%;
+}
+
+/* Handwritten / Magazine Doodles */
+.fashion-doodle-text {
+    font-family: 'Alex Brush', 'Playfair Display', cursive;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #5c1118;
+    display: inline-block;
+    letter-spacing: 0.05em;
+    transform: rotate(-14deg);
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.4);
+}
+
+.fashion-doodle-vogue {
+    font-family: 'Bodoni Moda', 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    color: #5c1118;
+    display: inline-block;
+    transform: rotate(8deg);
+}
+
+.fashion-doodle-kiss {
+    font-size: 1.8rem;
+    margin-left: 0.3rem;
+    display: inline-block;
+    transform: rotate(-12deg);
+}
+
+.fashion-doodle-xoxo {
+    font-family: 'Alex Brush', cursive;
+    font-size: 2.4rem;
+    color: #5c1118;
+    display: block;
+    text-align: center;
+    transform: rotate(-8deg);
+    margin-top: -0.5rem;
 }
 
 /* Floating Animations */
@@ -128,32 +167,34 @@
 
 @keyframes sparkleGlow {
     0%, 100% {
-        opacity: 0.12;
+        opacity: 0.25;
         transform: scale(0.85) rotate(0deg);
     }
     50% {
-        opacity: 0.42;
-        transform: scale(1.18) rotate(20deg);
+        opacity: 0.75;
+        transform: scale(1.22) rotate(20deg);
     }
 }
 
-/* Exact Coordinates & Sizes for the Background Graphics */
-.f-item-1 { top: 3.5%; left: 2%; width: 75px; height: 75px; --rot: -12deg; }
-.f-item-2 { top: 2.5%; right: 3%; width: 70px; height: 70px; --rot: 14deg; }
-.f-item-3 { top: 5.5%; left: 22%; width: 28px; height: 28px; }
-.f-item-4 { top: 5%; right: 24%; width: 32px; height: 32px; }
-.f-item-5 { top: 16%; left: -10px; width: 105px; height: 105px; --rot: 18deg; }
-.f-item-6 { top: 18%; right: 1%; width: 90px; height: 90px; --rot: -10deg; }
-.f-item-7 { top: 30%; right: 4%; width: 28px; height: 28px; }
-.f-item-8 { top: 38%; left: 1%; width: 85px; height: 85px; --rot: 8deg; }
-.f-item-9 { top: 44%; right: 1.5%; width: 65px; height: 90px; --rot: -15deg; }
-.f-item-10 { top: 48%; left: 5%; width: 30px; height: 30px; }
-.f-item-11 { top: 58%; left: 1%; width: 110px; height: 110px; --rot: -8deg; }
-.f-item-12 { top: 64%; right: 1%; width: 105px; height: 105px; --rot: -20deg; }
-.f-item-13 { top: 72%; left: 4%; width: 32px; height: 32px; }
-.f-item-14 { top: 78%; left: 1.5%; width: 80px; height: 110px; --rot: 18deg; }
-.f-item-15 { top: 85%; right: 2%; width: 80px; height: 80px; --rot: 12deg; }
-.f-item-17 { top: 92%; right: 6%; width: 36px; height: 36px; }
+/* Coordinates & Sizes along screen sides */
+.f-item-heel-1 { top: 10vh; left: 2.5vw; width: 105px; height: 105px; --rot: -12deg; }
+.f-item-text-chic { top: 28vh; left: 3vw; --rot: -14deg; opacity: 0.65; }
+.f-item-perfume { top: 44vh; left: 2vw; width: 85px; height: 85px; --rot: 10deg; }
+.f-item-handbag { top: 64vh; left: 2.5vw; width: 95px; height: 95px; --rot: -8deg; }
+.f-item-stamp { top: 82vh; left: 2vw; width: 115px; height: 115px; --rot: 12deg; opacity: 0.45; }
+
+.f-item-sunglasses { top: 12vh; right: 3vw; width: 95px; height: 95px; --rot: 14deg; }
+.f-item-text-vogue { top: 30vh; right: 2.5vw; --rot: 6deg; opacity: 0.65; }
+.f-item-lipstick { top: 46vh; right: 3vw; width: 75px; height: 100px; --rot: -15deg; }
+.f-item-heel-2 { top: 66vh; right: 2.5vw; width: 105px; height: 105px; --rot: -22deg; }
+.f-item-bow { top: 82vh; right: 3vw; width: 90px; height: 90px; --rot: 8deg; }
+
+/* Scattered Sparkles across screen */
+.f-sparkle-1 { top: 8vh; left: 24vw; width: 34px; height: 34px; }
+.f-sparkle-2 { top: 6vh; right: 25vw; width: 38px; height: 38px; }
+.f-sparkle-3 { top: 48vh; left: 18vw; width: 28px; height: 28px; }
+.f-sparkle-4 { top: 52vh; right: 18vw; width: 32px; height: 32px; }
+.f-sparkle-5 { top: 92vh; left: 50vw; width: 36px; height: 36px; transform: translateX(-50%); }
 
 /* Title Box & Eyebrow */
 .shop-page-title-box {
