@@ -21,10 +21,6 @@
     --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
     --ease-bounce: cubic-bezier(0.2, 1, 0.3, 1);
 
-    /* Clean Fallback CSS SVG Ribbon Bow Cursors 🎀 */
-    --cursor-bow: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34"><path d="M14 13 C7 4 1 8 3 15 C5 21 12 17 14 15 Z" fill="%23b01b2e" stroke="%232b0408" stroke-width="1.3" stroke-linejoin="round"/><path d="M5 10 C7 8 10 10 12 14" stroke="%23ff8fa3" stroke-width="1.2" stroke-linecap="round"/><path d="M18 13 C25 4 31 8 29 15 C27 21 20 17 18 15 Z" fill="%23b01b2e" stroke="%232b0408" stroke-width="1.3" stroke-linejoin="round"/><path d="M27 10 C25 8 22 10 20 14" stroke="%23ff8fa3" stroke-width="1.2" stroke-linecap="round"/><path d="M13 16 C10 22 6 27 2 32 C6 30 9 31 11 29 C14 24 15 19 15 16 Z" fill="%23800f1c" stroke="%232b0408" stroke-width="1.2" stroke-linejoin="round"/><path d="M19 16 C22 22 26 27 30 32 C26 30 23 31 21 29 C18 24 17 19 17 16 Z" fill="%23800f1c" stroke="%232b0408" stroke-width="1.2" stroke-linejoin="round"/><circle cx="16" cy="14" r="3.6" fill="%23e01e37" stroke="%232b0408" stroke-width="1.3"/><circle cx="15" cy="13" r="1.1" fill="%23ffffff"/></svg>') 16 14, auto;
-    
-    --cursor-bow-pointer: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><path d="M15 14 C8 4 1 8 3 16 C5 22 13 18 15 16 Z" fill="%23d90429" stroke="%232b0408" stroke-width="1.3" stroke-linejoin="round"/><path d="M5 10 C7 8 11 10 13 15" stroke="%23ffb3c1" stroke-width="1.3" stroke-linecap="round"/><path d="M19 14 C26 4 33 8 31 16 C29 22 21 18 19 16 Z" fill="%23d90429" stroke="%232b0408" stroke-width="1.3" stroke-linejoin="round"/><path d="M29 10 C27 8 23 10 21 15" stroke="%23ffb3c1" stroke-width="1.3" stroke-linecap="round"/><path d="M14 17 C11 23 7 28 3 33 C7 31 10 32 12 30 C15 25 16 20 16 17 Z" fill="%23a01a2e" stroke="%232b0408" stroke-width="1.2" stroke-linejoin="round"/><path d="M20 17 C23 23 27 28 31 33 C27 31 24 32 22 30 C19 25 18 20 18 17 Z" fill="%23a01a2e" stroke="%232b0408" stroke-width="1.2" stroke-linejoin="round"/><circle cx="17" cy="15" r="3.8" fill="%23ff4d6d" stroke="%232b0408" stroke-width="1.3"/><circle cx="16" cy="14" r="1.2" fill="%23ffffff"/><polygon points="17,1 18,5 22,5 19,8 20,12 17,9 14,12 15,8 12,5 16,5" fill="%23ffd700"/></svg>') 17 15, pointer;
 }
 
 *,
@@ -33,12 +29,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    cursor: var(--cursor-bow);
 }
 
-html, body {
+html {
     scroll-behavior: smooth;
-    cursor: var(--cursor-bow);
 }
 
 body {
@@ -55,85 +49,19 @@ video {
     max-width: 100%;
 }
 
-a, 
-button, 
-input, 
-select, 
-textarea, 
-label, 
-[role="button"], 
-.nav-cart, 
-.btn-add-cart-pill, 
-.modal-size-btn, 
-.btn-modal-confirm-add, 
-.card-media, 
-.shop-catalog-card {
-    cursor: var(--cursor-bow-pointer) !important;
-}
-
-/* =========================================================
-   INTERACTIVE FLOATING COQUETTE RIBBON BOW CURSOR 🎀
-   ========================================================= */
-
-.custom-bow-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 36px;
-    height: 36px;
-    pointer-events: none;
-    z-index: 9999999;
-    transform: translate(-50%, -50%);
-    transition: transform 0.08s ease-out, opacity 0.2s ease;
-    opacity: 0;
-    will-change: transform, left, top;
-}
-
-.custom-bow-cursor.active {
-    opacity: 1;
-}
-
-.custom-bow-cursor.hovered {
-    transform: translate(-50%, -50%) scale(1.35) rotate(-12deg);
-}
-
-.custom-bow-cursor.clicked {
-    transform: translate(-50%, -50%) scale(0.85) rotate(10deg);
-}
-
-.cursor-bow-icon {
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45));
-}
-
-.cursor-sparkle-trail {
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999998;
-    color: #ff4d6d;
-    font-size: 18px;
-    user-select: none;
-    animation: sparkleBurst 0.6s ease-out forwards;
-}
-
-@keyframes sparkleBurst {
-    0% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(0.7) rotate(0deg);
-    }
-    100% {
-        opacity: 0;
-        transform: translate(calc(-50% + var(--dx, 0px)), calc(-50% + var(--dy, -24px))) scale(1.4) rotate(45deg);
-    }
-}
-
 a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
-button {
+button,
+[role="button"],
+.nav-cart,
+.btn-add-cart-pill,
+.modal-size-btn,
+.btn-modal-confirm-add {
+    cursor: pointer;
     border: none;
     background: none;
     font-family: inherit;
