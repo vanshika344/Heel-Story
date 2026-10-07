@@ -192,3 +192,46 @@ document.querySelectorAll('video').forEach(video => {
 document.addEventListener('DOMContentLoaded', () => {
     renderCart();
 });
+
+/* ===== 💮 CUSTOM FLOWER CURSOR ===== */
+(function () {
+    // Create cursor element
+    const cursor = document.createElement('div');
+    cursor.id = 'flower-cursor';
+    cursor.textContent = '💮';
+    cursor.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 28px;
+        height: 28px;
+        font-size: 22px;
+        line-height: 28px;
+        text-align: center;
+        pointer-events: none;
+        z-index: 999999;
+        transform: translate(-50%, -50%);
+        transition: transform 0.08s ease;
+        user-select: none;
+    `;
+    document.body.appendChild(cursor);
+
+    // Hide default cursor everywhere
+    const style = document.createElement('style');
+    style.textContent = '*, *::before, *::after { cursor: none !important; }';
+    document.head.appendChild(style);
+
+    // Follow mouse
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+    });
+
+    // Slight scale on click
+    document.addEventListener('mousedown', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+    });
+    document.addEventListener('mouseup', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+})();
