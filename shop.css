@@ -5,6 +5,9 @@
 .shop-page-body {
     background-color: #f3ece1 !important;
     color: #4a0e13 !important;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
 .shop-navbar {
@@ -35,14 +38,147 @@
 }
 
 .shop-page-main {
+    position: relative;
     padding: 7.5rem 1.5rem 5rem;
-    max-width: 1200px;
+    max-width: 1250px;
     margin: 0 auto;
 }
 
+.shop-page-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================================
+   FASHION BACKGROUND GRAPHICS & DOODLES
+   ========================================================= */
+
+.fashion-bg-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.fashion-graphic-item {
+    position: absolute;
+    color: #4a0e13;
+    opacity: 0.15;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    will-change: transform;
+}
+
+.fashion-graphic-item svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Floating Animations */
+.anim-float {
+    animation: floatSlow 7s ease-in-out infinite alternate;
+}
+
+.anim-float-rev {
+    animation: floatSlowReverse 8.5s ease-in-out infinite alternate;
+}
+
+.anim-sway {
+    animation: swaySlow 9s ease-in-out infinite alternate;
+}
+
+.anim-sparkle {
+    animation: sparkleGlow 4s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+    0% {
+        transform: translateY(0px) rotate(var(--rot, 0deg));
+    }
+    100% {
+        transform: translateY(-16px) rotate(calc(var(--rot, 0deg) + 4deg));
+    }
+}
+
+@keyframes floatSlowReverse {
+    0% {
+        transform: translateY(0px) rotate(var(--rot, 0deg));
+    }
+    100% {
+        transform: translateY(16px) rotate(calc(var(--rot, 0deg) - 4deg));
+    }
+}
+
+@keyframes swaySlow {
+    0% {
+        transform: rotate(var(--rot, 0deg)) scale(1);
+    }
+    50% {
+        transform: rotate(calc(var(--rot, 0deg) + 6deg)) scale(1.03);
+    }
+    100% {
+        transform: rotate(calc(var(--rot, 0deg) - 4deg)) scale(0.98);
+    }
+}
+
+@keyframes sparkleGlow {
+    0%, 100% {
+        opacity: 0.12;
+        transform: scale(0.85) rotate(0deg);
+    }
+    50% {
+        opacity: 0.42;
+        transform: scale(1.18) rotate(20deg);
+    }
+}
+
+/* Exact Coordinates & Sizes for the Background Graphics */
+.f-item-1 { top: 3.5%; left: 2%; width: 75px; height: 75px; --rot: -12deg; }
+.f-item-2 { top: 2.5%; right: 3%; width: 70px; height: 70px; --rot: 14deg; }
+.f-item-3 { top: 5.5%; left: 22%; width: 28px; height: 28px; }
+.f-item-4 { top: 5%; right: 24%; width: 32px; height: 32px; }
+.f-item-5 { top: 16%; left: -10px; width: 105px; height: 105px; --rot: 18deg; }
+.f-item-6 { top: 18%; right: 1%; width: 90px; height: 90px; --rot: -10deg; }
+.f-item-7 { top: 30%; right: 4%; width: 28px; height: 28px; }
+.f-item-8 { top: 38%; left: 1%; width: 85px; height: 85px; --rot: 8deg; }
+.f-item-9 { top: 44%; right: 1.5%; width: 65px; height: 90px; --rot: -15deg; }
+.f-item-10 { top: 48%; left: 5%; width: 30px; height: 30px; }
+.f-item-11 { top: 58%; left: 1%; width: 110px; height: 110px; --rot: -8deg; }
+.f-item-12 { top: 64%; right: 1%; width: 105px; height: 105px; --rot: -20deg; }
+.f-item-13 { top: 72%; left: 4%; width: 32px; height: 32px; }
+.f-item-14 { top: 78%; left: 1.5%; width: 80px; height: 110px; --rot: 18deg; }
+.f-item-15 { top: 85%; right: 2%; width: 80px; height: 80px; --rot: 12deg; }
+.f-item-17 { top: 92%; right: 6%; width: 36px; height: 36px; }
+
+/* Title Box & Eyebrow */
 .shop-page-title-box {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3.8rem;
+    position: relative;
+}
+
+.title-fashion-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: #6b3338;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.eyebrow-sparkle {
+    color: #4a0e13;
+    font-size: 0.85rem;
+    animation: sparkleGlow 3s ease-in-out infinite;
 }
 
 .shop-page-title {
@@ -52,7 +188,19 @@
     color: #4a0e13;
     letter-spacing: 0.02em;
     line-height: 1.1;
-    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.08);
+    margin-bottom: 0.6rem;
+}
+
+.shop-page-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: #6b3338;
+    max-width: 580px;
+    margin: 0 auto;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 /* 3 Columns x 4 Rows Product Grid */
@@ -301,11 +449,32 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .fashion-graphic-item {
+        opacity: 0.11;
+    }
+    .f-item-5, .f-item-6, .f-item-11, .f-item-12 {
+        transform: scale(0.85);
+    }
+}
+
 @media (max-width: 860px) {
     .shop-catalog-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 2.5rem 1.4rem;
     }
+
+    .fashion-graphic-item {
+        opacity: 0.08;
+    }
+
+    .f-item-1 { width: 55px; height: 55px; left: 1%; }
+    .f-item-2 { width: 50px; height: 50px; right: 1%; }
+    .f-item-5 { width: 80px; height: 80px; left: -15px; }
+    .f-item-6 { width: 70px; height: 70px; right: -5px; }
+    .f-item-8 { width: 65px; height: 65px; }
+    .f-item-11 { width: 85px; height: 85px; }
+    .f-item-12 { width: 80px; height: 80px; }
 }
 
 @media (max-width: 520px) {
@@ -313,4 +482,9 @@
         grid-template-columns: 1fr;
         gap: 2.2rem;
     }
+
+    .fashion-graphic-item {
+        opacity: 0.06;
+    }
 }
+
