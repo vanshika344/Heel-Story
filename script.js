@@ -191,31 +191,35 @@ document.querySelectorAll('video').forEach(video => {
 /* ===== INITIALIZE ===== */
 document.addEventListener('DOMContentLoaded', () => {
     renderCart();
-    initLipstickCursor();
+    initBowCursor();
 });
 
-/* ===== CUSTOM LUXURY LIPSTICK CURSOR ===== */
-function initLipstickCursor() {
+/* ===== CUSTOM COQUETTE RIBBON BOW CURSOR 🎀 ===== */
+function initBowCursor() {
     // Only run on non-touch pointer devices
     if (window.matchMedia('(pointer: coarse)').matches) return;
 
-    let cursor = document.getElementById('lipstickCursor');
+    let cursor = document.getElementById('bowCursor');
     if (!cursor) {
         cursor = document.createElement('div');
-        cursor.id = 'lipstickCursor';
-        cursor.className = 'custom-lipstick-cursor';
+        cursor.id = 'bowCursor';
+        cursor.className = 'custom-bow-cursor';
         cursor.setAttribute('aria-hidden', 'true');
         cursor.innerHTML = `
-            <svg class="cursor-lipstick-icon" viewBox="0 0 34 34" fill="none">
-                <!-- Red Lipstick Bullet (Hotspot tip at 2,2) -->
-                <path d="M2 2 L13 5 L11 13 L4 11 Z" fill="#c1121f" stroke="#2b0408" stroke-width="1.2" stroke-linejoin="round"/>
-                <path d="M2 2 L13 5 L9 8 L2 5 Z" fill="#ff4d6d"/>
-                <!-- Gold Metal Collar -->
-                <path d="M4 11 L11 13 L13 19 L6 17 Z" fill="#ffd700" stroke="#2b0408" stroke-width="1.2" stroke-linejoin="round"/>
-                <line x1="6" y1="13" x2="11" y2="15" stroke="#ffffff" stroke-width="0.8" opacity="0.8"/>
-                <!-- Dark Base Body Tube -->
-                <path d="M6 17 L13 19 L17 29 L10 27 Z" fill="#1f0205" stroke="#2b0408" stroke-width="1.2" stroke-linejoin="round"/>
-                <path d="M10 27 L17 29 L16 31 L9 29 Z" fill="#ffd700" stroke="#2b0408" stroke-width="1"/>
+            <svg class="cursor-bow-icon" viewBox="0 0 36 36" fill="none">
+                <!-- Left Ribbon Loop -->
+                <path d="M15 14 C8 4 1 8 3 16 C5 22 13 18 15 16 Z" fill="#d90429" stroke="#2b0408" stroke-width="1.3" stroke-linejoin="round"/>
+                <path d="M5 10 C7 8 11 10 13 15" stroke="#ffb3c1" stroke-width="1.2" stroke-linecap="round"/>
+                <!-- Right Ribbon Loop -->
+                <path d="M19 14 C26 4 33 8 31 16 C29 22 21 18 19 16 Z" fill="#d90429" stroke="#2b0408" stroke-width="1.3" stroke-linejoin="round"/>
+                <path d="M29 10 C27 8 23 10 21 15" stroke="#ffb3c1" stroke-width="1.2" stroke-linecap="round"/>
+                <!-- Left Streamer Tail -->
+                <path d="M14 17 C11 23 7 28 3 33 C7 31 10 32 12 30 C15 25 16 20 16 17 Z" fill="#9d0208" stroke="#2b0408" stroke-width="1.2" stroke-linejoin="round"/>
+                <!-- Right Streamer Tail -->
+                <path d="M20 17 C23 23 27 28 31 33 C27 31 24 32 22 30 C19 25 18 20 18 17 Z" fill="#9d0208" stroke="#2b0408" stroke-width="1.2" stroke-linejoin="round"/>
+                <!-- Center Ribbon Knot -->
+                <circle cx="17" cy="15" r="3.8" fill="#ff4d6d" stroke="#2b0408" stroke-width="1.3"/>
+                <circle cx="16" cy="14" r="1.2" fill="#ffffff" opacity="0.95"/>
             </svg>
         `;
         document.body.appendChild(cursor);
@@ -264,7 +268,7 @@ function initLipstickCursor() {
         if (x < 0 || y < 0) return;
         const sparkle = document.createElement('div');
         sparkle.className = 'cursor-sparkle-trail';
-        const icons = ['✨', '💄', '💋', '✦', '✧'];
+        const icons = ['🎀', '✨', '💖', '✦', '🌸'];
         sparkle.textContent = icons[Math.floor(Math.random() * icons.length)];
         sparkle.style.left = `${x}px`;
         sparkle.style.top = `${y}px`;
