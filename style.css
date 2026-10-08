@@ -49,6 +49,16 @@ video {
     max-width: 100%;
 }
 
+/* Hide browser's native video controls & PiP button */
+video::-webkit-media-controls,
+video::-webkit-media-controls-enclosure,
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -82,6 +92,7 @@ ul {
     transform: translateY(30px);
     transition: opacity 0.75s var(--ease-smooth), transform 0.75s var(--ease-smooth);
 }
+
 .reveal.visible,
 .reveal.in-view {
     opacity: 1;
@@ -332,12 +343,23 @@ ul {
 }
 
 .philosophy-text {
-    font-family: var(--font-body);
-    font-size: clamp(0.95rem, 1.8vw, 1.2rem);
-    font-weight: 300;
-    line-height: 1.85;
-    color: rgba(242, 233, 220, 0.9);
-    letter-spacing: 0.02em;
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+    font-weight: 700;
+    line-height: 1.7;
+    color: rgba(242, 233, 220, 0.95);
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
+.philosophy-line {
+    display: block;
+}
+
+.philosophy-moon {
+    display: inline-block;
+    font-size: 0.8em;
+    margin-left: 0.2em;
 }
 
 .featured-collection-section {
