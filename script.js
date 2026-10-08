@@ -5,18 +5,18 @@
 // ===== SINGLE SOURCE OF TRUTH: product catalog =====
 // price = plain number in INR. Never store "₹"/"$" here.
 const PRODUCTS = [
-    { id: 1,  name: "Velvet Rose Heels",  price: 2499,  img: "assets/images/product-1.jpg" },
-    { id: 2,  name: "Noir Heels",         price: 4999,  img: "assets/images/product-2.jpg" },
-    { id: 3,  name: "White Swan Heels",   price: 3499,  img: "assets/images/product-3.jpg" },
-    { id: 4,  name: "Marilyn Heels",      price: 6999,  img: "assets/images/product-4.jpg" },
-    { id: 5,  name: "Beige Heels",        price: 4999,  img: "assets/images/product-5.jpg" },
-    { id: 6,  name: "Paris Love",         price: 8999,  img: "assets/images/product-6.jpg" },
-    { id: 7,  name: "Bridal Safe Heels",  price: 2499,  img: "assets/images/product-7.jpg" },
-    { id: 8,  name: "White Pearly Heels", price: 5999,  img: "assets/images/product-8.jpg" },
-    { id: 9,  name: "Kim Cut Boots",      price: 14999, img: "assets/images/product-9.jpg" },
-    { id: 10, name: "Tokyo Heels",        price: 2499,  img: "assets/images/product-10.jpg" },
-    { id: 11, name: "School Heels",       price: 4999,  img: "assets/images/product-11.jpg" },
-    { id: 12, name: "Ballet Heels",       price: 1499,  img: "assets/images/product-12.jpg" }
+    { id: 1, name: "Velvet Rose Heels", price: 2499, img: "assets/images/product-1.jpg" },
+    { id: 2, name: "Noir Heels", price: 4999, img: "assets/images/product-2.jpg" },
+    { id: 3, name: "White Swan Heels", price: 3499, img: "assets/images/product-3.jpg" },
+    { id: 4, name: "Marilyn Heels", price: 6999, img: "assets/images/product-4.jpg" },
+    { id: 5, name: "Beige Heels", price: 4999, img: "assets/images/product-5.jpg" },
+    { id: 6, name: "Paris Love", price: 8999, img: "assets/images/product-6.jpg" },
+    { id: 7, name: "Bridal Safe Heels", price: 2499, img: "assets/images/product-7.jpg" },
+    { id: 8, name: "White Pearly Heels", price: 5999, img: "assets/images/product-8.jpg" },
+    { id: 9, name: "Kim Cut Boots", price: 14999, img: "assets/images/product-9.jpg" },
+    { id: 10, name: "Tokyo Heels", price: 2499, img: "assets/images/product-10.jpg" },
+    { id: 11, name: "School Heels", price: 4999, img: "assets/images/product-11.jpg" },
+    { id: 12, name: "Ballet Heels", price: 1499, img: "assets/images/product-12.jpg" }
 ];
 
 // ===== SINGLE PRICE FORMATTER (₹ everywhere) =====
@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Follow mouse
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = e.clientX + 'px';
-        cursor.style.top  = e.clientY + 'px';
+        cursor.style.top = e.clientY + 'px';
     });
 
     // Slight scale on click
